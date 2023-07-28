@@ -1,0 +1,65 @@
+GS2TemplateFormatVersion: "2019-05-01"
+Description: GS2-Stamina initialize template Version 2010-06-26
+
+Globals:
+  Alias:
+    DistributorNamespaceName: distributor-0001
+    StaminaNamespaceName: stamina-0001
+    ExchangeNamespaceName: exchange-0003
+
+Resources:
+
+  StaminaNamespace:
+    Type: GS2::Stamina::Namespace
+    Properties:
+      Name: ${StaminaNamespaceName}
+
+  StaminaMasterData:
+    Type: GS2::Stamina::CurrentStaminaMaster
+    Properties:
+      NamespaceName: ${StaminaNamespaceName}
+      Settings:
+        version: "2019-02-14"
+        staminaModels:
+          - name: Stamina
+            recoverIntervalMinutes: 1
+            recoverValue: 1
+            initialCapacity: 50
+            isOverflow: true
+            maxCapacity: 999
+    DependsOn:
+      - StaminaNamespace
+
+  ExchangeNamespace:
+    Type: GS2::Exchange::Namespace
+    Properties:
+      Name: ${ExchangeNamespaceName}
+      TransactionSetting:
+        EnableAutoRun: true
+        DistributorNamespaceId: !Join
+          - ':'
+          - - grn
+            - gs2
+            - !GetAttr Gs2::Region
+            - !GetAttr Gs2::OwnerId
+            - distributor
+            - ${DistributorNamespaceName}
+
+  ExchangeMasterData:
+    Type: GS2::Exchange::CurrentRateMaster
+    Properties:
+      NamespaceName: ${ExchangeNamespaceName}
+      Settings:
+        version: "2019-08-19"
+        rateModels:
+          - name: Recover
+            consumeActions: []
+            acquireActions:
+              - action: Gs2Stamina:RecoverStaminaByUserId
+                request:
+                  namespaceName: ${StaminaNamespaceName}
+                  staminaName: Stamina
+                  userId: "#{userId}"
+                  recoverValue: 10
+    DependsOn:
+      - ExchangeNamespace

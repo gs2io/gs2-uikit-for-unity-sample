@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0294d5accbcc4b9ea137742443d0645, type: 3}
+  m_Name: RateModelRecover
+  m_EditorClassIdentifier: 
+  Namespace: {fileID: 11400000, guid: ae92ddbd371c64b33a3f92e241e2e9c5, type: 2}
+  rateName: Recover

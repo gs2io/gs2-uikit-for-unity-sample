@@ -1,0 +1,68 @@
+GS2TemplateFormatVersion: "2019-05-01"
+Description: GS2 SDK identifier template Version 2019-07-10
+
+Globals:
+  Alias:
+    ApplicationUserName: application
+    AdministratorUserName: administrator
+    DistributorNamespaceName: distributor-0001
+    GatewayNamespaceName: gateway-0001
+
+Resources:
+  IdentifierApplicationUser:
+    Type: GS2::Identifier::User
+    Properties:
+      Name: ${ApplicationUserName}
+
+  IdentifierApplicationUserAttachPolicy:
+    Type: GS2::Identifier::AttachSecurityPolicy
+    Properties:
+      UserName: ${ApplicationUserName}
+      SecurityPolicyId: grn:gs2::system:identifier:securityPolicy:ApplicationAccess
+    DependsOn:
+      - IdentifierApplicationUser
+
+  IdentifierApplicationIdentifier:
+    Type: GS2::Identifier::Identifier
+    Properties:
+      UserName: ${ApplicationUserName}
+    DependsOn:
+      - IdentifierApplicationUser
+
+  IdentifierAdministratorUser:
+    Type: GS2::Identifier::User
+    Properties:
+      Name: ${AdministratorUserName}
+
+  IdentifierAdministratorUserAttachPolicy:
+    Type: GS2::Identifier::AttachSecurityPolicy
+    Properties:
+      UserName: ${AdministratorUserName}
+      SecurityPolicyId: grn:gs2::system:identifier:securityPolicy:AdministratorAccess
+    DependsOn:
+      - IdentifierAdministratorUser
+
+  IdentifierAdministratorIdentifier:
+    Type: GS2::Identifier::Identifier
+    Properties:
+      UserName: ${AdministratorUserName}
+    DependsOn:
+      - IdentifierAdministratorUser
+
+  DistributorNamespace:
+    Type: GS2::Distributor::Namespace
+    Properties:
+      Name: ${DistributorNamespaceName}
+      AutoRunStampSheetNotification:
+        GatewayNamespaceId: !GetAttr GatewayNamespace.Item.NamespaceId
+
+  GatewayNamespace:
+    Type: GS2::Gateway::Namespace
+    Properties:
+      Name: ${GatewayNamespaceName}
+
+Outputs:
+  ApplicationClientId: !GetAttr IdentifierApplicationIdentifier.Item.ClientId
+  ApplicationClientSecret: !GetAttr IdentifierApplicationIdentifier.ClientSecret
+  AdministratorClientId: !GetAttr IdentifierAdministratorIdentifier.Item.ClientId
+  AdministratorClientSecret: !GetAttr IdentifierAdministratorIdentifier.ClientSecret

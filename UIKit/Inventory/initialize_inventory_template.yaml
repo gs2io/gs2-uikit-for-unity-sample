@@ -1,0 +1,82 @@
+GS2TemplateFormatVersion: "2019-05-01"
+Description: GS2-Inventory initialize template Version 2010-06-26
+
+Globals:
+  Alias:
+    DistributorNamespaceName: distributor-0001
+    InventoryNamespaceName: inventory-0001
+    ExchangeNamespaceName: exchange-0001
+
+Resources:
+
+  InventoryNamespace:
+    Type: GS2::Inventory::Namespace
+    Properties:
+      Name: ${InventoryNamespaceName}
+
+  InventoryMasterData:
+    Type: GS2::Inventory::CurrentItemModelMaster
+    Properties:
+      NamespaceName: ${InventoryNamespaceName}
+      Settings:
+        version: "2019-02-05"
+        inventoryModels:
+          - name: Bag
+            initialCapacity: 10
+            maxCapacity: 10
+            itemModels:
+              - name: Potion
+                stackingLimit: 99
+                allowMultipleStacks: true
+                sortValue: 1
+              - name: Ether
+                stackingLimit: 99
+                allowMultipleStacks: true
+                sortValue: 2
+    DependsOn:
+      - InventoryNamespace
+
+  ExchangeNamespace:
+    Type: GS2::Exchange::Namespace
+    Properties:
+      Name: ${ExchangeNamespaceName}
+      TransactionSetting:
+        EnableAutoRun: true
+        DistributorNamespaceId: !Join
+          - ':'
+          - - grn
+            - gs2
+            - !GetAttr Gs2::Region
+            - !GetAttr Gs2::OwnerId
+            - distributor
+            - ${DistributorNamespaceName}
+
+  ExchangeMasterData:
+    Type: GS2::Exchange::CurrentRateMaster
+    Properties:
+      NamespaceName: ${ExchangeNamespaceName}
+      Settings:
+        version: "2019-08-19"
+        rateModels:
+          - name: Potion
+            consumeActions: []
+            acquireActions:
+              - action: Gs2Inventory:AcquireItemSetByUserId
+                request:
+                  namespaceName: ${InventoryNamespaceName}
+                  inventoryName: Bag
+                  itemName: Potion
+                  userId: "#{userId}"
+                  acquireCount: 10
+          - name: Ether
+            consumeActions: []
+            acquireActions:
+              - action: Gs2Inventory:AcquireItemSetByUserId
+                request:
+                  namespaceName: ${InventoryNamespaceName}
+                  inventoryName: Bag
+                  itemName: Ether
+                  userId: "#{userId}"
+                  acquireCount: 10
+    DependsOn:
+      - ExchangeNamespace

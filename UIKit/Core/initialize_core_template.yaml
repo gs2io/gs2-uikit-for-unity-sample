@@ -7,6 +7,7 @@ Globals:
     AdministratorUserName: administrator
     DistributorNamespaceName: distributor-0001
     GatewayNamespaceName: gateway-0001
+    JobQueueNamespaceName: job-queue-0001
 
 Resources:
   IdentifierApplicationUser:
@@ -60,6 +61,11 @@ Resources:
     Type: GS2::Gateway::Namespace
     Properties:
       Name: ${GatewayNamespaceName}
+
+  JobQueueNamespace:
+    Type: GS2::JobQueue::Namespace
+    Properties:
+      Name: ${JobQueueNamespaceName}
 
 Outputs:
   ApplicationClientId: !GetAttr IdentifierApplicationIdentifier.Item.ClientId

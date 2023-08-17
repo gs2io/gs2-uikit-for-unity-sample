@@ -357,6 +357,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000000000000000002, guid: 4f2ea013026f4b36bbf1a9d719f847df, type: 3}
+      propertyPath: WaitAsyncProcessComplete
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000000000000000002, guid: 4f2ea013026f4b36bbf1a9d719f847df, type: 3}
       propertyPath: onError.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}

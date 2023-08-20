@@ -29,7 +29,7 @@ namespace Scenes.Samples.UIKit.Lottery
         public void OnEnable() {
             this.index = 0;
             this._context.DrawnPrize = OwnDrawnPrize.New(
-                this._fetcher.Context.LotteryModel.Namespace,
+                this._fetcher.Context.Namespace,
                 this.index
             );
         }

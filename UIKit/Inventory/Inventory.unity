@@ -123,6 +123,20 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &86192739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33470c2c2555f498ba22d5766c00fb6f, type: 3}
+  m_Name: Runtime
+  m_EditorClassIdentifier: 
+  Namespace: {fileID: 497775364}
+  inventoryName: Bag
 --- !u!1 &178255497
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58649f81a00e487cb32f4c07eb8ef862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -598,6 +615,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &497775364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb7e6616ea84a4daa342c625e7dd57c, type: 3}
+  m_Name: Runtime
+  m_EditorClassIdentifier: 
+  namespaceName: inventory-0001
 --- !u!1 &515107789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e34ea7cdafe44bd915a3fa139c12923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -1106,6 +1139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6766b02faf4bb5943a71685f754ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -1133,8 +1169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2f39e2716844f684a875a84a8fcb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemModel: {fileID: 0}
-  ItemSet: {fileID: 0}
+  _itemModel: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  _itemSet: {fileID: 0}
 --- !u!222 &1016573052
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1293,8 +1332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e48ae6da62948eda499eb1fd8b2452c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryModel: {fileID: 11400000, guid: e50e3ce5cbfa2420297e60f51457b985, type: 2}
-  Inventory: {fileID: 11400000, guid: 3c6214a976f914a6cb04a9ce3daa438c, type: 2}
+  _inventoryModel: {fileID: 86192739}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  _inventory: {fileID: 11400000, guid: 3c6214a976f914a6cb04a9ce3daa438c, type: 2}
 --- !u!114 &1021060470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,6 +1349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac74cfe5460a4d199cd0d2af0d7cca03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -1782,6 +1827,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 74a52ae6fb01d4dfa918c476d4a1e2ed, type: 3}
   - value: Ether
     sprite: {fileID: 21300000, guid: 81ed59c6fae0b4b6f9d33f6133fc2e16, type: 3}
+  defaultSprite: {fileID: 0}
   onUpdate:
     m_PersistentCalls:
       m_Calls:
@@ -2825,7 +2871,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: 908c9d4d8554d4bcbb0a027395f40dfd, type: 2}
+  _rateModel: {fileID: 11400000, guid: 908c9d4d8554d4bcbb0a027395f40dfd, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1792208396
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,7 +3320,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: 4623a57e7573c411d9d4a64875364f81, type: 2}
+  _rateModel: {fileID: 11400000, guid: 4623a57e7573c411d9d4a64875364f81, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2083618271
 GameObject:
   m_ObjectHideFlags: 0

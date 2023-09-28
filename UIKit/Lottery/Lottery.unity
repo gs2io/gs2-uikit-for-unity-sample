@@ -1015,6 +1015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249638998}
   - component: {fileID: 249638999}
+  - component: {fileID: 249639000}
   m_Layer: 5
   m_Name: LotteryWindow
   m_TagString: Untagged
@@ -1064,6 +1065,22 @@ MonoBehaviour:
   drawSummary: {fileID: 1014247473}
   Namespace: {fileID: 11400000, guid: 2f27321ad996043039400c9cf4b1b38f, type: 2}
   state: 0
+--- !u!114 &249639000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249638997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f76ffe31e24177ba52e5bce0a83117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _namespace: {fileID: 11400000, guid: 2f27321ad996043039400c9cf4b1b38f, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &261254709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1511,6 +1528,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Context: {fileID: 407662180}
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -1526,7 +1546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b37404686146e88437141dbc4ae6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LotteryModel: {fileID: 11400000, guid: 445f6440c553246fea9e0afa25198e77, type: 2}
+  _lotteryModel: {fileID: 11400000, guid: 445f6440c553246fea9e0afa25198e77, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &407662181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1873,7 +1896,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: 3431dcecd84b24c2eaf0792f4b99d651, type: 2}
+  _rateModel: {fileID: 11400000, guid: 3431dcecd84b24c2eaf0792f4b99d651, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &537861959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2417,7 +2443,6 @@ GameObject:
   m_Component:
   - component: {fileID: 618180763}
   - component: {fileID: 618180767}
-  - component: {fileID: 618180766}
   - component: {fileID: 618180765}
   - component: {fileID: 618180764}
   m_Layer: 5
@@ -2474,23 +2499,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc3a5259254457ea3f59ad23093a011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Context: {fileID: 618180766}
+  Context: {fileID: 249639000}
   onError:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &618180766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618180762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7f76ffe31e24177ba52e5bce0a83117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Namespace: {fileID: 11400000, guid: 2f27321ad996043039400c9cf4b1b38f, type: 2}
 --- !u!114 &618180767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3821,7 +3833,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4b1885dfa94829b5c6aa227eb2f1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Probability: {fileID: 0}
+  _probability: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1100771835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4818,7 +4833,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1482580466}
-  - component: {fileID: 1482580470}
   - component: {fileID: 1482580467}
   - component: {fileID: 1482580469}
   - component: {fileID: 1482580471}
@@ -4913,19 +4927,6 @@ MonoBehaviour:
   onError:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1482580470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482580465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7f76ffe31e24177ba52e5bce0a83117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Namespace: {fileID: 11400000, guid: 2f27321ad996043039400c9cf4b1b38f, type: 2}
 --- !u!114 &1482580471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6585,7 +6586,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: 03dcc37d8fe7b4926848f6eae293ebb2, type: 2}
+  _rateModel: {fileID: 11400000, guid: 03dcc37d8fe7b4926848f6eae293ebb2, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2001619691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7192,7 +7196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a1c4203f0c4d8980649cc42d772815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Message: {fileID: 0}
+  _message: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4254866324651002067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7205,6 +7212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010846d6be4e4c19ae6e8f8820a22fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -7282,7 +7292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2285c0282f445609ed9757262aa440a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Namespace: {fileID: 11400000, guid: 6e312776dbf2a41ebbd835eca5ffc550, type: 2}
+  _namespace: {fileID: 11400000, guid: 6e312776dbf2a41ebbd835eca5ffc550, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4254866324651013059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7296,6 +7309,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Context: {fileID: 4254866324651013058}
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -7421,7 +7437,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4325349550276828866}
   - component: {fileID: 7014778443634720422}
-  - component: {fileID: 7014778443634720423}
   - component: {fileID: 7014778443634720421}
   - component: {fileID: 563053045875697422}
   m_Layer: 5
@@ -7503,7 +7518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc3a5259254457ea3f59ad23093a011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Context: {fileID: 7014778443634720423}
+  Context: {fileID: 249639000}
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -7531,19 +7546,6 @@ MonoBehaviour:
   m_Spacing: {x: 30, y: 30}
   m_Constraint: 1
   m_ConstraintCount: 5
---- !u!114 &7014778443634720423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4325349550276828867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7f76ffe31e24177ba52e5bce0a83117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Namespace: {fileID: 11400000, guid: 2f27321ad996043039400c9cf4b1b38f, type: 2}
 --- !u!224 &7489478364753107456
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7611,7 +7613,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4b1885dfa94829b5c6aa227eb2f1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Probability: {fileID: 0}
+  _probability: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7489478364753107461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7687,6 +7692,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Context: {fileID: 7489478364753109271}
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -7756,7 +7764,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b37404686146e88437141dbc4ae6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LotteryModel: {fileID: 11400000, guid: a3b7b7a02119b442e91a8452cb16f0cd, type: 2}
+  _lotteryModel: {fileID: 11400000, guid: a3b7b7a02119b442e91a8452cb16f0cd, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &7489478364753130288
 RectTransform:
   m_ObjectHideFlags: 0

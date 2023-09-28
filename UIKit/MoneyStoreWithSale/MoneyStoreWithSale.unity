@@ -209,7 +209,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b819fd6977934d5e9b2a84e67847a961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Counter: {fileID: 0}
+  _counter: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -225,6 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b18b8084eb4cffb18e47a696f8698e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -2657,7 +2663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c8c4d7ccce4f7e9f4659cc93dfde82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wallet: {fileID: 0}
+  _wallet: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -2673,7 +2682,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b819fd6977934d5e9b2a84e67847a961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Counter: {fileID: 0}
+  _counter: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -3321,6 +3333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d038f64c96c048c0bdc3425013e1b48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -3348,7 +3363,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4212bd143f824a88ac61a8a61a7cacce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wallet: {fileID: 11400000, guid: c4f428f2df0a549899db799d189ab2f3, type: 2}
+  _wallet: {fileID: 11400000, guid: c4f428f2df0a549899db799d189ab2f3, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1449603255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,7 +4823,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c8c4d7ccce4f7e9f4659cc93dfde82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wallet: {fileID: 0}
+  _wallet: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -5066,6 +5087,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee8cb57fa4c42568140ba84ddee2b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls: []
@@ -5081,7 +5105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137edd7c6eb0402894ccf7f471582b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Showcase: {fileID: 11400000, guid: 683c10bdbdf114907a0365087d20500e, type: 2}
+  _showcase: {fileID: 11400000, guid: 683c10bdbdf114907a0365087d20500e, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2104857312
 PrefabInstance:
   m_ObjectHideFlags: 0

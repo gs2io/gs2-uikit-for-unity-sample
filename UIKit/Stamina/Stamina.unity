@@ -123,6 +123,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &31579339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5711cde264554d46b8c1a3ce016c6f75, type: 3}
+  m_Name: Runtime
+  m_EditorClassIdentifier: 
+  namespaceName: stamina-0001
+--- !u!114 &52917331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfbb85cec823432cafc33f09eee43d5, type: 3}
+  m_Name: Runtime
+  m_EditorClassIdentifier: 
+  Namespace: {fileID: 31579339}
+  staminaName: Stamina
 --- !u!1 &188090067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,8 +1664,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e20376571f642e18f82c1250d1069c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StaminaModel: {fileID: 11400000, guid: 42b016b3eafc4444897f1ee030f91285, type: 2}
-  Stamina: {fileID: 11400000, guid: d6444977fd8104c59b23bd166196eb47, type: 2}
+  _staminaModel: {fileID: 52917331}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  _stamina: {fileID: 11400000, guid: d6444977fd8104c59b23bd166196eb47, type: 2}
 --- !u!114 &1021060470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1651,6 +1681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbfe01369e0420781cbc92e8d94b2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -1678,6 +1711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6dab27691043748ece3d497a2ffc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -2800,4 +2836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: 7faef7637695a405ca4964c8a43468c4, type: 2}
+  _rateModel: {fileID: 11400000, guid: 7faef7637695a405ca4964c8a43468c4, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []

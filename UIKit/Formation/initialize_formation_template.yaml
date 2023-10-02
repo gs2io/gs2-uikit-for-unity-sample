@@ -1,0 +1,182 @@
+GS2TemplateFormatVersion: "2019-05-01"
+Description: GS2-Formation initialize template Version 2010-06-26
+
+Globals:
+  Alias:
+    DistributorNamespaceName: distributor-0001
+    JobQueueNamespaceName: job-queue-0001
+    FormationNamespaceName: formation
+    WeaponDictionaryNamespaceName: formation-dictionary-weapon
+    HeadDictionaryNamespaceName: formation-dictionary-head
+    ArmorDictionaryNamespaceName: formation-dictionary-armor
+    ExchangeNamespaceName: formation-exchange
+
+Resources:
+
+  FormationNamespace:
+    Type: GS2::Formation::Namespace
+    Properties:
+      Name: ${FormationNamespaceName}
+
+  FormationMasterData:
+    Type: GS2::Formation::CurrentFormMaster
+    Properties:
+      NamespaceName: ${FormationNamespaceName}
+      Settings:
+        version: "2019-09-09"
+        moldModels:
+          - name: Equipment
+            initialMaxCapacity: 6
+            maxCapacity: 12
+            formModel:
+              name: Equipment
+              slots:
+                - name: Weapon
+                  propertyRegex: !Join
+                    - ':'
+                    - - grn
+                      - gs2
+                      - !GetAttr Gs2::Region
+                      - !GetAttr Gs2::OwnerId
+                      - dictionary
+                      - ${WeaponDictionaryNamespaceName}
+                - name: Head
+                  propertyRegex: !Join
+                    - ':'
+                    - - grn
+                      - gs2
+                      - !GetAttr Gs2::Region
+                      - !GetAttr Gs2::OwnerId
+                      - dictionary
+                      - ${HeadDictionaryNamespaceName}
+                - name: Armor
+                  propertyRegex: !Join
+                    - ':'
+                    - - grn
+                      - gs2
+                      - !GetAttr Gs2::Region
+                      - !GetAttr Gs2::OwnerId
+                      - dictionary
+                      - ${ArmorDictionaryNamespaceName}
+    DependsOn:
+      - FormationNamespace
+
+  WeaponDictionaryNamespace:
+    Type: GS2::Dictionary::Namespace
+    Properties:
+      Name: ${WeaponDictionaryNamespaceName}
+
+  WeaponDictionaryMasterData:
+    Type: GS2::Dictionary::CurrentEntryMaster
+    Properties:
+      NamespaceName: ${WeaponDictionaryNamespaceName}
+      Settings:
+        version: "2020-04-30"
+        entryModels:
+          - name: Weapon-0001
+          - name: Weapon-0002
+          - name: Weapon-0003
+          - name: Weapon-0004
+    DependsOn:
+      - WeaponDictionaryNamespace
+
+  HeadDictionaryNamespace:
+    Type: GS2::Dictionary::Namespace
+    Properties:
+      Name: ${HeadDictionaryNamespaceName}
+
+  HeadDictionaryMasterData:
+    Type: GS2::Dictionary::CurrentEntryMaster
+    Properties:
+      NamespaceName: ${HeadDictionaryNamespaceName}
+      Settings:
+        version: "2020-04-30"
+        entryModels:
+          - name: Head-0001
+          - name: Head-0002
+          - name: Head-0003
+          - name: Head-0004
+    DependsOn:
+      - HeadDictionaryNamespace
+
+  ArmorDictionaryNamespace:
+    Type: GS2::Dictionary::Namespace
+    Properties:
+      Name: ${ArmorDictionaryNamespaceName}
+
+  ArmorDictionaryMasterData:
+    Type: GS2::Dictionary::CurrentEntryMaster
+    Properties:
+      NamespaceName: ${ArmorDictionaryNamespaceName}
+      Settings:
+        version: "2020-04-30"
+        entryModels:
+          - name: Armor-0001
+          - name: Armor-0002
+          - name: Armor-0003
+          - name: Armor-0004
+    DependsOn:
+      - ArmorDictionaryNamespace
+
+  ExchangeNamespace:
+    Type: GS2::Exchange::Namespace
+    Properties:
+      Name: ${ExchangeNamespaceName}
+      TransactionSetting:
+        EnableAutoRun: true
+        DistributorNamespaceId: !Join
+          - ':'
+          - - grn
+            - gs2
+            - !GetAttr Gs2::Region
+            - !GetAttr Gs2::OwnerId
+            - distributor
+            - ${DistributorNamespaceName}
+        QueueNamespaceId: !Join
+          - ':'
+          - - grn
+            - gs2
+            - !GetAttr Gs2::Region
+            - !GetAttr Gs2::OwnerId
+            - queue
+            - ${JobQueueNamespaceName}
+
+  ExchangeMasterData:
+    Type: GS2::Exchange::CurrentRateMaster
+    Properties:
+      NamespaceName: ${ExchangeNamespaceName}
+      Settings:
+        version: "2019-08-19"
+        rateModels:
+          - name: Initialize
+            consumeActions: []
+            acquireActions:
+              - action: Gs2Dictionary:AddEntriesByUserId
+                request:
+                  namespaceName: ${WeaponDictionaryNamespaceName}
+                  userId: "#{userId}"
+                  entryModelNames:
+                    - Weapon-0001
+                    - Weapon-0002
+                    - Weapon-0003
+                    - Weapon-0004
+              - action: Gs2Dictionary:AddEntriesByUserId
+                request:
+                  namespaceName: ${HeadDictionaryNamespaceName}
+                  userId: "#{userId}"
+                  entryModelNames:
+                    - Head-0001
+                    - Head-0002
+                    - Head-0003
+                    - Head-0004
+              - action: Gs2Dictionary:AddEntriesByUserId
+                request:
+                  namespaceName: ${ArmorDictionaryNamespaceName}
+                  userId: "#{userId}"
+                  entryModelNames:
+                    - Armor-0001
+                    - Armor-0002
+                    - Armor-0003
+                    - Armor-0004
+    DependsOn:
+      - ExchangeNamespace

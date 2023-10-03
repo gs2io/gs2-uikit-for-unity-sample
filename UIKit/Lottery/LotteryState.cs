@@ -65,7 +65,7 @@ namespace Scenes.Samples.UIKit.Lottery
         public void Next() {
             switch (this.state) {
                 case State.Menu:
-                    Gs2ClientHolder.Instance.Gs2.Lottery.ClearDrawnResult(this.Namespace);
+                    Gs2ClientHolder.Instance.Gs2.Lottery.ClearDrawnResult(this.Namespace.NamespaceName);
                     this.state = State.DrawEffect;
                     break;
                 case State.DrawEffect:

@@ -5,14 +5,10 @@ using System.Linq;
 using Gs2.Gs2Dictionary.Model;
 using Gs2.Unity.Gs2Dictionary.Model;
 using Gs2.Unity.Gs2Formation.Model;
-using Gs2.Unity.Gs2Key.ScriptableObject;
-using Gs2.Unity.UiKit.Core;
 using Gs2.Unity.UiKit.Gs2Formation;
-using Gs2.Unity.UiKit.Gs2Formation.Context;
 using Gs2.Unity.Util;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Scenes.Samples.UIKit.Formation
 {

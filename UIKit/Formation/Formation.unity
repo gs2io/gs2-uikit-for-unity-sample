@@ -646,19 +646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ab6fc88177457688d0b14949c2c6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &205135074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b674b32f304178b965b31820f5fa10, type: 3}
-  m_Name: Runtime
-  m_EditorClassIdentifier: 
-  namespaceName: formation
 --- !u!1001 &229807516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1434,7 +1421,7 @@ GameObject:
   - component: {fileID: 508461323}
   - component: {fileID: 508461322}
   m_Layer: 5
-  m_Name: Formation
+  m_Name: FormationWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1668,7 +1655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf9d88c1dbb45d386c30b392a1477a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _formModel: {fileID: 2119310154}
+  _formModel: {fileID: 774534874}
   OnUpdate:
     m_PersistentCalls:
       m_Calls: []
@@ -2559,6 +2546,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723733547}
   m_CullTransparentMesh: 1
+--- !u!114 &774534874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49e906564a2d468281173bddd45e11a, type: 3}
+  m_Name: Runtime
+  m_EditorClassIdentifier: 
+  MoldModel: {fileID: 1280291741}
 --- !u!1 &786082185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,6 +3420,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ab6fc88177457688d0b14949c2c6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1280291741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f068693d39d493895ebf89ffbbbcef, type: 3}
+  m_Name: Runtime
+  m_EditorClassIdentifier: 
+  Namespace: {fileID: 1617182381}
+  moldModelName: Equipment
 --- !u!1 &1356144667
 GameObject:
   m_ObjectHideFlags: 0
@@ -4273,6 +4287,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604937211}
   m_CullTransparentMesh: 1
+--- !u!114 &1617182381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b674b32f304178b965b31820f5fa10, type: 3}
+  m_Name: Runtime
+  m_EditorClassIdentifier: 
+  namespaceName: formation
 --- !u!1 &1652324759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,20 +4436,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652324759}
   m_CullTransparentMesh: 1
---- !u!114 &1735050325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f068693d39d493895ebf89ffbbbcef, type: 3}
-  m_Name: Runtime
-  m_EditorClassIdentifier: 
-  Namespace: {fileID: 205135074}
-  moldModelName: Equipment
 --- !u!1 &1870616832
 GameObject:
   m_ObjectHideFlags: 0
@@ -4885,19 +4898,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2119310154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e49e906564a2d468281173bddd45e11a, type: 3}
-  m_Name: Runtime
-  m_EditorClassIdentifier: 
-  MoldModel: {fileID: 1735050325}
 --- !u!1 &2136086246
 GameObject:
   m_ObjectHideFlags: 0

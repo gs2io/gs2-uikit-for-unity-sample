@@ -102,7 +102,7 @@ namespace Scenes.Samples.UIKit.Formation
                         Gs2GameSessionHolder.Instance.GameSession
                     ).Entry(
                         Entry.GetEntryNameFromGrn(slot.Body)
-                    ).GetEntryWithSignature(
+                    ).GetEntryWithSignatureFuture(
                         this.action.Key.Grn
                     );
                     yield return future;

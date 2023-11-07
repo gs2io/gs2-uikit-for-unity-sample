@@ -83,7 +83,7 @@ namespace Scenes.Samples.UIKit.Enhance
                     inventoryName
                 ).SimpleItemModel(
                     itemName
-                ).Model();
+                ).ModelFuture();
                 yield return future;
                 if (future.Error != null) {
                     this.onError.Invoke(future.Error, null);

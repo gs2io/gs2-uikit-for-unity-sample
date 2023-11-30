@@ -70,10 +70,16 @@ public class Ad : MonoBehaviour
             {
                 var future = UnityAdUtil.ViewFuture(
                     "test",
-                    new GameSession(new AccessToken {
-                        UserId = "user-0001",
-                    })
-                );
+                    new GameSession(
+                        null,
+                        null,
+                        null,
+                        null
+                    ) {
+                        AccessToken = new AccessToken {
+                            UserId = "user-0001",
+                        }
+                    });
                 yield return future;
             }
         }

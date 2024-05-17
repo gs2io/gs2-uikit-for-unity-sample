@@ -86,4 +86,28 @@ public class Ad : MonoBehaviour
         StartCoroutine(Impl());
 #endif
     }
+    
+    public void StartAppLovinMax() {
+#if GS2_ENABLE_APPLOVIN_MAX
+        IEnumerator Impl() {
+            {
+                var future = AppLovinMaxUtil.ViewFuture(
+                    "vrzqNRVuqwZNpmssqTUFWH_D4dR1LyDmFrCVzTyQU5w8CAV5QTehTpbCZoRN40aHHQunA9osWdWg2eVSKpEELu",
+                    "e2e9126da8884030",
+                    new GameSession(
+                        null,
+                        null,
+                        null,
+                        null
+                    ) {
+                        AccessToken = new AccessToken {
+                            UserId = "user-0001",
+                        }
+                    });
+                yield return future;
+            }
+        }
+        StartCoroutine(Impl());
+#endif
+    }
 }

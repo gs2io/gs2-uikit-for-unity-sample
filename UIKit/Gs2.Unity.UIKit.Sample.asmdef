@@ -7,7 +7,8 @@
         "Gs2.Unity.UIKit",
         "UniTask",
         "UniTask.Linq",
-        "Unity.Services.Core"
+        "Unity.Services.Core",
+        "unity-webview"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -21,6 +22,11 @@
             "name": "com.unity.ads",
             "expression": "",
             "define": "GS2_ENABLE_UNITY_ADS"
+        },
+        {
+            "name": "net.gree.unity-webview",
+            "expression": "",
+            "define": "GS2_ENABLE_GREE_WEBVIEW"
         }
     ],
     "noEngineReferences": false

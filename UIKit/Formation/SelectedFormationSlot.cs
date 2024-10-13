@@ -101,7 +101,7 @@ namespace Scenes.Samples.UIKit.Formation
                     ).Me(
                         Gs2GameSessionHolder.Instance.GameSession
                     ).Entry(
-                        Entry.GetEntryNameFromGrn(slot.Body)
+                        Entry.GetEntryModelNameFromGrn(slot.Body)
                     ).GetEntryWithSignatureFuture(
                         this.action.Key.Grn
                     );

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc11419c142f469ebf2796f2946b616, type: 3}
+  m_Name: WeaponOwnInventory
+  m_EditorClassIdentifier: 
+  Namespace: {fileID: 11400000, guid: 15d57141f0fbc4f03a0a4f7cc8c6d078, type: 2}
+  inventoryName: Weapon

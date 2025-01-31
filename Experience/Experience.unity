@@ -425,7 +425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: a03b7413ebe144bc684c55820733fd3e, type: 2}
+  _rateModel: {fileID: 11400000, guid: a03b7413ebe144bc684c55820733fd3e, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &452460706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,8 +1238,9 @@ GameObject:
   - component: {fileID: 957238536}
   - component: {fileID: 957238537}
   - component: {fileID: 957238538}
+  - component: {fileID: 957238539}
   m_Layer: 5
-  m_Name: RanktValue
+  m_Name: RankValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1299,6 +1303,22 @@ MonoBehaviour:
   notFound: 0
   loaded: 1
   target: {fileID: 880926978}
+--- !u!114 &957238539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957238535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ab9024f7084fef8495cc63848a2fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loading: 0
+  notFound: 0
+  loaded: 1
+  target: {fileID: 1937574604}
 --- !u!1 &963622087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,7 +1549,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4c829480014e7cb6efd7d94f797280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Status: {fileID: 11400000, guid: 83d92af0de3a84a139b3d785914595cd, type: 2}
+  _status: {fileID: 11400000, guid: 83d92af0de3a84a139b3d785914595cd, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1021060470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1542,7 +1565,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce7b5a963564214b37267f902257907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExperienceModel: {fileID: 11400000, guid: 61ce745dbd1a04213a48a290c9a1624f, type: 2}
+  _experienceModel: {fileID: 11400000, guid: 61ce745dbd1a04213a48a290c9a1624f, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1021060471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1555,6 +1581,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb81de7e70b46cb90da1cfc176ca339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  addition: 0
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -1582,6 +1612,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b2258bb10945918b8e7f48f1d72366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -2456,7 +2489,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: a0d4ae05f6fe94795bf0ac464a981191, type: 2}
+  _rateModel: {fileID: 11400000, guid: a0d4ae05f6fe94795bf0ac464a981191, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1613703214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3021,4 +3057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: a03b7413ebe144bc684c55820733fd3e, type: 2}
+  _rateModel: {fileID: 11400000, guid: a03b7413ebe144bc684c55820733fd3e, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []

@@ -281,7 +281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: 3b9236d6aba0347f3980b1491e7c2119, type: 2}
+  _rateModel: {fileID: 11400000, guid: 3b9236d6aba0347f3980b1491e7c2119, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &45845231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,7 +793,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: e1890c6419b804e2db9170f120def27c, type: 2}
+  _rateModel: {fileID: 11400000, guid: e1890c6419b804e2db9170f120def27c, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &206490656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1274,6 +1280,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87b5be3260e4c8a909211eefdfebffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -2071,7 +2080,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: 50fc8af1819a945ffa30880d1b11c0e7, type: 2}
+  _rateModel: {fileID: 11400000, guid: 50fc8af1819a945ffa30880d1b11c0e7, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &873848046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2428,6 +2440,8 @@ GameObject:
   - component: {fileID: 1016573056}
   - component: {fileID: 1016573052}
   - component: {fileID: 1016573050}
+  - component: {fileID: 1016573059}
+  - component: {fileID: 1016573058}
   - component: {fileID: 1016573049}
   - component: {fileID: 1016573054}
   - component: {fileID: 1016573055}
@@ -2499,6 +2513,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d6f82878024f4caf0ce0ce07438780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -2526,6 +2543,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4953a78c891402aac17c75c2f237524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -2553,7 +2573,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760c241395db45379b7ce9c9974eca69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntryModel: {fileID: 0}
+  _entryModel: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1016573054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2624,6 +2647,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016573046}
   m_CullTransparentMesh: 1
+--- !u!114 &1016573058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016573046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef085d76fc664885bf089667fde07aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _entryModel: {fileID: 0}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  _entry: {fileID: 0}
+--- !u!114 &1016573059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016573046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013c8fd5a0f14cceaccaad42ca220985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1021060464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,7 +2794,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37cb249fc7fa45c2946c73e66fc84dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Namespace: {fileID: 11400000, guid: 11f14113d5bc14aca8ad08d5f8f24b1f, type: 2}
+  _namespace: {fileID: 11400000, guid: 11f14113d5bc14aca8ad08d5f8f24b1f, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1061059149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3997,7 +4052,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: 672cd035d8d334722b8169e3339db45b, type: 2}
+  _rateModel: {fileID: 11400000, guid: 672cd035d8d334722b8169e3339db45b, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1561315947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5122,7 +5180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83114a34962407cb4a3cb20de8a3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateModel: {fileID: 11400000, guid: 975d211e69f4d43f39abe526315bb9d0, type: 2}
+  _rateModel: {fileID: 11400000, guid: 975d211e69f4d43f39abe526315bb9d0, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2083618271
 GameObject:
   m_ObjectHideFlags: 0

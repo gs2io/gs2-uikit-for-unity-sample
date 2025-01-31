@@ -416,6 +416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4984bbcac0dc4ca5acc67940158016ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFetched:
+    m_PersistentCalls:
+      m_Calls: []
   onError:
     m_PersistentCalls:
       m_Calls:
@@ -1081,7 +1084,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6f74c9f57c4be0ac84e6c6ef944b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Room: {fileID: 11400000, guid: 744e016b2f99d423a88e61b4a7024b0a, type: 2}
+  _room: {fileID: 11400000, guid: 744e016b2f99d423a88e61b4a7024b0a, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1267266837
 GameObject:
   m_ObjectHideFlags: 0

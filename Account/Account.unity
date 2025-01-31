@@ -737,7 +737,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3294e94c76641a0919380e64d3359d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Account: {fileID: 11400000, guid: 526a20db1c3ee47c3a54dd231cc22cd4, type: 2}
+  _account: {fileID: 11400000, guid: 526a20db1c3ee47c3a54dd231cc22cd4, type: 2}
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1371885604
 GameObject:
   m_ObjectHideFlags: 0
